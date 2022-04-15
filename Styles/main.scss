@@ -1,0 +1,341 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+
+$font-family: "Nunito Sans", sans-serif;
+$font-size: 1rem;
+$padding: 7px;
+$margin: 5px;
+$green: rgb(16, 139, 0);
+$blue: rgb(0, 110, 255);
+$gold: rgb(197, 179, 88);
+$black: rgb(0, 0, 0);
+$gray-1: rgb(50, 50, 50);
+$gray-2: rgb(75, 75, 75);
+$gray-3: rgb(100, 100, 100);
+$gray-4: rgb(125, 125, 125);
+$gray-5: rgb(150, 150, 150);
+$gray-6: rgb(175, 175, 175);
+$gray-7: rgb(200, 200, 200);
+$gray-8: rgb(225, 225, 225);
+$gray-9: rgb(250, 250, 250);
+$transition: all 0.35s ease;
+$border: 1px solid black;
+$box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+@mixin block {
+    // basic margin and padding
+    padding: $padding;
+    margin: $margin;
+}
+
+@mixin border {
+    border: $border;
+    border-radius: 5px;
+}
+
+@mixin center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 60px;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+}
+
+html {
+    font: 100%/1.4 system-ui;
+    font-family: $font-family;
+}
+body {
+    color: $gray-1;
+}
+button {
+    @include border;
+    color: $gray-9;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin: $margin;
+    margin-bottom: 40px;
+    padding: $padding;
+    background: $blue;
+    box-shadow: $box-shadow;
+}
+button:hover {
+    background: $gray-2;
+    color: $gray-9;
+}
+footer {
+    background-color: rgba($blue, 0.7);
+    h3 {
+        color: $gray-9;
+    }
+}
+p {
+    margin-bottom: $margin;
+}
+h1 {
+    color: rgb(0, 110, 255);
+    font-size: 2.45rem;
+    font-weight: 900;
+}
+h2 {
+    font-size: 1.6rem;
+    padding-left: $padding;
+}
+h3 {
+    font-size: 1.2rem;
+    padding-left: $padding;
+}
+header {
+    @include block;
+}
+input[type="password"] {
+    width: 100%;
+    padding: $padding;
+    font-weight: 600;
+    margin: 8px 0;
+    height: 40px;
+    box-sizing: border-box;
+    font-size: $font-size;
+}
+input[type="email"] {
+    width: 100%;
+    padding: $padding;
+    font-weight: 600;
+    margin: 8px 0;
+    height: 40px;
+    box-sizing: border-box;
+    font-size: $font-size;
+}
+input[type="text"] {
+    width: 100%;
+    padding: $padding;
+    font-weight: 600;
+    margin: 8px 0;
+    height: 40px;
+    box-sizing: border-box;
+    font-size: $font-size;
+}
+
+input[type="password"]:focus {
+    background-color: $gray-3;
+    color: $gray-9;
+}
+input[type="email"]:focus {
+    background-color: $gray-3;
+    color: $gray-9;
+}
+input[type="text"]:focus {
+    background-color: $gray-3;
+    color: $gray-9;
+}
+textarea {
+    box-sizing: border-box;
+    @include border;
+    @include block;
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    background-color: $gray-8;
+    resize: none;
+}
+textarea:focus {
+    background-color: $gray-3;
+    color: $gray-9;
+}
+select {
+    @include border;
+    width: 100%;
+    padding: 16px 20px;
+    background-color: $gray-9;
+    font-size: $font-size;
+    font-weight: 600;
+}
+select:focus {
+    background-color: $gray-3;
+    color: $gray-9;
+}
+
+table {
+    margin: auto;
+    min-width: 100%;
+    border-collapse: collapse;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 5px;
+}
+th {
+    background-color: $gray-8;
+    font-weight: 900;
+    text-align: left;
+    padding-left: $padding;
+    padding-bottom: $padding;
+}
+td {
+    height: 65px;
+    vertical-align: bottom;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding-left: $padding;
+    padding-bottom: $padding;
+}
+
+tr:nth-child(even) {
+    background-color: $gray-7;
+}
+tr:nth-child(odd) {
+    background-color: $gray-6;
+}
+
+.alert {
+    color: red;
+    font-weight: 700;
+    @include center;
+}
+// .card {
+//     max-width: 80px;
+//     margin: $margin;
+//     box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 5px;
+// }
+.center {
+    @include center;
+}
+.col-2 {
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+.col-2b {
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+.container {
+    max-width: 1200px;
+    background-color: $gray-9;
+}
+.header {
+    @include block;
+    padding: $padding + 5;
+    font-weight: 600;
+    background: $gray-8;
+}
+.hidden {
+    display: none;
+}
+.location {
+    @include block;
+    @include border;
+    background-color: $gray-6;
+    box-shadow: $box-shadow;
+}
+.block {
+    @include block;
+}
+.icon-small {
+    cursor: pointer;
+    @include center;
+}
+
+.grid-ish {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-ish > * {
+    flex: 1 1 125px;
+}
+.grid-small {
+    @include block;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.grid-small > * {
+    flex: 1 1 50px;
+}
+.right {
+    position: absolute;
+    margin-right: 10%;
+    margin-left: 90%;
+}
+.small_icon {
+    height: 40px;
+    width: 40px;
+}
+.small-header {
+    max-width: 370px;
+}
+.text-center {
+    font-size: 0.75rem;
+    text-align: center;
+    font-weight: 900;
+}
+
+.post__card {
+    @include block;
+    // @include border;
+    border-bottom: 2px solid $gray-5;
+    background: $gray-9;
+    margin-top: 10px;
+}
+
+.weather_icon {
+    height: 100px;
+    fill: $gray-3;
+    @include block;
+}
+.weather_icon_white {
+    height: 50px;
+    fill: $gray-9;
+    @include block;
+}
+
+.weather_button {
+    cursor: pointer;
+    @include border;
+    margin: $margin;
+    background: $gray-9;
+    padding: $padding;
+    max-width: 200px;
+}
+.weather_button:hover {
+    background: $gray-7;
+    color: white;
+}
+
+.weather_button_col-2l {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    height: 40px;
+    max-width: 200px;
+}
+.weather_icon_sm {
+    height: 50px;
+    fill: $gray-5;
+    padding-left: 10px;
+}
+.weather_icon_small:hover {
+    fill: white;
+}
+.displayTempNormal {
+    color: green;
+    font-size: 2rem;
+    font-weight: 900;
+}
+.displayTempWarn {
+    font-size: 2rem;
+    font-weight: 900;
+    color: orange;
+}
+.displayTempAlert {
+    font-size: 2rem;
+    font-weight: 900;
+    color: red;
+}
